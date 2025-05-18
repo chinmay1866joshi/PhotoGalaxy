@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<div class="c1">
+		
+		<center>
+  <div class="c2">
+  	<div class="l1">
+			<input type="button" class="l2" value="SignUP" onclick="signup()">
+		</div>
+  	<h1 class="h1">File Hidder Application</h1><br>
+
+    <span id="timer"></span>
+    <div class="d1">
+  	<input type="number" required>
+
+  	<span>Enter the OTP:</span>
+  	</div>
+  	<input type="submit" class="s1">
+
+  </div>
+  </center>
+</div>
+
+  
+  <script type="text/javascript">
+    function signup(){
+      window.open("signup.html","_self");
+    }
+
+let timerOn = true;
+
+function timer(remaining) {
+  var m = Math.floor(remaining / 60);
+  var s = remaining % 60;
+  
+  m = m < 10 ? '0' + m : m;
+  s = s < 10 ? '0' + s : s;
+  document.getElementById('timer').innerHTML = m + ':' + s;
+  remaining -= 1;
+  
+  if(remaining >= 0 && timerOn) {
+    setTimeout(function() {
+        timer(remaining);
+    }, 1000);
+    return;
+  }
+
+  if(!timerOn) {
+  
+    return;
+  }
+  
+  alert('Timeout for otp');
+}
+
+timer(120);
+  
+  </script>
+
+
+
+  <style type="text/css">
+
+  	body{
+  		background: linear-gradient(45deg,#fead06,#c00def);
+  		justify-content: center;
+  		align-items: center;
+  		min-height: 100vh;
+  		display: flex;
+  	}
+  	.c1{
+  		height: 100%;
+  		width: 100%;
+  		padding: 50px;
+  	}
+  	.c2{
+  		padding: 70px 40px;
+  		position: relative;
+  		height: 350px;
+  		width: 400px;
+  	    background:#fff ;
+  		box-shadow: 0 5px 25px;
+  		border-radius: 20px;
+  	}
+     .timer{
+         padding-left: 100px;
+     }
+
+       span{
+         padding-left: 250px;
+       }
+  
+
+    .s1{
+    	padding: 7px;
+        margin-top: 90px;
+    	width: 300px;
+    	background: radial-gradient(circle,rgba(238,174,202,1)0%, rgba(148,187,233,1)100%);
+    	border-radius: 10px;
+    }
+
+    .c2 h1{
+    	border-left: 5px solid #e91e63;
+ 
+    	margin-bottom: 30px;
+    }
+        .c2 .d1{
+    	height: 30px;
+    	width: 300px;	
+    	position: relative;
+    	margin-bottom: 30px;
+
+    }
+
+    .c2 .d1: last-child{
+     margin-bottom: 0;
+    }
+    .c2 .d1 input{
+    	top: 0;
+    	left: 0;
+    	background: transparent;
+    	padding: 10px;
+    	width: 100%;
+    	border-radius: 5px;
+    	position: absolute;
+    	border:1px solid #111 ;
+    	padding: 10px;
+    	box-sizing: border-box;
+    	outline: none;
+    	font-size: 16px;
+    	color: #111;
+    }
+    .c2 .d1 span{
+    	position: absolute;
+    	top: 1px;
+    	left: 1px;
+    	padding: 10px;
+    	font-size: 16px;
+    	color: #111;
+    	font-weight: 300;
+    	display: inline-block;
+    	transition: 0.5s;
+    	pointer-events: none;
+    }
+    .c2 .d1 input:focus ~ span,
+    .c2 .d1 input:valid ~ span
+    {
+    	transform: translateX(-10px) translateY(-32px);
+    	font-size: 13px;
+    }
+
+    
+    .c2 .l1 .l2{
+    	border: none;
+    	outline: none;
+    	background: none;
+    	font-size: 20px;
+    	text-decoration:2px solid underline;
+        padding-left:300px;
+        color:rgba(100, 20, 0, 1.0);
+          }
+  </style>
+</body>
+</html>
+
+
